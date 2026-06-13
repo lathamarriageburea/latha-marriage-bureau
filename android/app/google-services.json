@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "178847742267",
+    "project_id": "lathamarriagebureau-810cd",
+    "storage_bucket": "lathamarriagebureau-810cd.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:178847742267:android:82b920c4200d9e6ca41f1e",
+        "android_client_info": {
+          "package_name": "com.example.latha_marriage_bureau"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "178847742267-rei8g017ul30tlr08jn9jrdmhnmfenaf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.latha_marriage_bureau",
+            "certificate_hash": "0fb1d238487d0f03ba041c00e86554bf1024d11e"
+          }
+        },
+        {
+          "client_id": "178847742267-9bsd4p0oo7n1aqf160isb2olapj571gp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCH-QCUZOQfiznzOodrnPtHJQztiTZDfUU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "178847742267-9bsd4p0oo7n1aqf160isb2olapj571gp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "178847742267-rcl7jldfporfik6thh5d9561kci2k677.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.lathaMarriageBureau"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
