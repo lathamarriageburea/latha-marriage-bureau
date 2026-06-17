@@ -49,48 +49,64 @@ Future<void> _forgotPassword() async {
       .trim()
       .isEmpty) {
 
-    ScaffoldMessenger.of(context)
-        .showSnackBar(
-      const SnackBar(
-        content: Text(
-          'Please enter your email address first',
-        ),
-      ),
-    );
+   ScaffoldMessenger.of(context).showSnackBar(
+  const SnackBar(
+    content: Text(
+      'Please enter your email address first',
+      textAlign: TextAlign.center,
+    ),
+    behavior: SnackBarBehavior.floating,
+    margin: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.all(Radius.circular(12)),
+    ),
+  ),
+);
 
     return;
   }
 
-  try {
+ try {
+
+    final email = _emailController.text.trim();
 
     await FirebaseAuth.instance
         .sendPasswordResetEmail(
-      email: _emailController.text
-          .trim(),
+      email: email,
     );
 
     if (!mounted) return;
 
-    ScaffoldMessenger.of(context)
-        .showSnackBar(
-      const SnackBar(
-        content: Text(
-          'Password reset email sent successfully',
-        ),
-      ),
-    );
+    ScaffoldMessenger.of(context).showSnackBar(
+  const SnackBar(
+    content: Text(
+      'Password reset email sent successfully ✓',
+      textAlign: TextAlign.center,
+    ),
+    behavior: SnackBarBehavior.floating,
+    backgroundColor: Colors.green,
+    margin: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.all(Radius.circular(12)),
+    ),
+  ),
+);
 
   } on FirebaseAuthException catch (e) {
 
-    ScaffoldMessenger.of(context)
-        .showSnackBar(
-      SnackBar(
-        content: Text(
-          e.message ??
-              'Unable to send reset email',
-        ),
+    ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(
+      content: Text(
+        e.message ?? 'Unable to send reset email',
+        textAlign: TextAlign.center,
       ),
-    );
+      behavior: SnackBarBehavior.floating,
+      margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(12)),
+      ),
+    ),
+  );
   }
 }
 
@@ -139,14 +155,20 @@ Future<void> _forgotPassword() async {
 
       if (!mounted) return;
 
-      ScaffoldMessenger.of(context)
-          .showSnackBar(
-        const SnackBar(
-          content: Text(
-            'Login Successful',
-          ),
-        ),
-      );
+      ScaffoldMessenger.of(context).showSnackBar(
+  const SnackBar(
+    content: Text(
+      'Login Successful ✓',
+      textAlign: TextAlign.center,
+    ),
+    behavior: SnackBarBehavior.floating,
+    backgroundColor: Colors.green,
+    margin: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.all(Radius.circular(12)),
+    ),
+  ),
+);
 
       Navigator.pushReplacement(
         context,
@@ -165,23 +187,34 @@ Future<void> _forgotPassword() async {
             'Your account has been disabled';
       }
 
-      ScaffoldMessenger.of(context)
-          .showSnackBar(
-        SnackBar(
-          content: Text(
-            message,
-          ),
-        ),
-      );
+      ScaffoldMessenger.of(context).showSnackBar(
+  SnackBar(
+    content: Text(
+      message,
+      textAlign: TextAlign.center,
+    ),
+    behavior: SnackBarBehavior.floating,
+    margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+    shape: const RoundedRectangleBorder(
+      borderRadius: BorderRadius.all(Radius.circular(12)),
+    ),
+  ),
+);
     } catch (_) {
-      ScaffoldMessenger.of(context)
-          .showSnackBar(
-        const SnackBar(
-          content: Text(
-            'Unable to login. Please try again.',
-          ),
-        ),
-      );
+        ScaffoldMessenger.of(context).showSnackBar(
+    const SnackBar(
+      content: Text(
+        'Unable to login. Please try again.',
+        textAlign: TextAlign.center,
+      ),
+      behavior: SnackBarBehavior.floating,
+      margin: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(12)),
+      ),
+    ),
+  );
+      
     } finally {
       if (mounted) {
         setState(

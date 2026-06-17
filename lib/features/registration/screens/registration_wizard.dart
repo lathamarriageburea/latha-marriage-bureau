@@ -203,17 +203,9 @@ if (college.length < 3) {
 }
 
 bool validateStep3() {
-
   if (familyType == null) {
     return false;
   }
-
-  if (nativePlaceController.text
-      .trim()
-      .isEmpty) {
-    return false;
-  }
-
   return true;
 }
 
@@ -259,7 +251,18 @@ bool validateStep6() {
 void showValidationError(String message) {
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
-      content: Text(message),
+      content: Text(
+        message,
+        textAlign: TextAlign.center,
+      ),
+      behavior: SnackBarBehavior.floating,
+      margin: const EdgeInsets.symmetric(
+        horizontal: 40,
+        vertical: 20,
+      ),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+      ),
     ),
   );
 }
@@ -518,14 +521,23 @@ print("Saving Firestore profile...");
 
     if (!mounted) return;
 
-    ScaffoldMessenger.of(context)
-        .showSnackBar(
-      const SnackBar(
-        content: Text(
-          'Profile saved successfully',
-        ),
-      ),
-    );
+    ScaffoldMessenger.of(context).showSnackBar(
+  const SnackBar(
+    content: Text(
+      'Profile saved successfully ✓',
+      textAlign: TextAlign.center,
+    ),
+    behavior: SnackBarBehavior.floating,
+    backgroundColor: Colors.green,
+    margin: EdgeInsets.symmetric(
+      horizontal: 40,
+      vertical: 20,
+    ),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.all(Radius.circular(12)),
+    ),
+  ),
+);
   } catch (e) {
     showValidationError(
       e.toString(),

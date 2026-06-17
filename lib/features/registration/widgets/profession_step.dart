@@ -89,7 +89,7 @@ class ProfessionStep extends StatelessWidget {
       child: ConstrainedBox(
         constraints:
             const BoxConstraints(
-          maxWidth: 900,
+          maxWidth: 580,
         ),
         child: Card(
           elevation: 3,

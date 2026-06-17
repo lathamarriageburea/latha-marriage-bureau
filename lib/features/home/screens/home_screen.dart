@@ -8,7 +8,7 @@ import '../widgets/success_stories_section.dart';
 import '../widgets/about_section.dart';
 import '../widgets/cta_banner_section.dart';
 import '../widgets/footer_section.dart';
-import '../../admin/screens/admin_login_screen.dart';
+//import '../../admin/screens/admin_login_screen.dart';
 import '../widgets/legal/screens/terms_conditions_screen.dart';
 import '../widgets/legal/screens/privacy_policy_screen.dart';
 import '../widgets/legal/screens/refund_policy_screen.dart';
@@ -88,15 +88,6 @@ class _HomeScreenState extends State<HomeScreen> {
     'About Us': () => _scrollTo(_aboutKey),
 
     'Contact Us': () => _scrollTo(_headerKey),
-
-    'Admin Login': () {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (_) => const AdminLoginScreen(),
-        ),
-      );
-    },
 
     'Terms & Conditions': () {
       Navigator.push(

@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'core/theme/app_theme.dart';
 import 'features/home/screens/home_screen.dart';
-//import 'features/admin/screens/admin_profiles_screen.dart';
-//import 'features/admin/screens/admin_dashboard_screen.dart';
+import 'features/admin/screens/admin_login_screen.dart';
 import 'firebase_options.dart';
 
 Future<void> main() async {
@@ -26,8 +25,11 @@ class LathaMarriageBureauApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Latha Marriage Bureau',
       theme: AppTheme.lightTheme,
-      //home: const AdminProfilesScreen(),
-      home: const HomeScreen(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const HomeScreen(),
+        '/admin': (context) => const AdminLoginScreen(),
+      },
     );
   }
 }
