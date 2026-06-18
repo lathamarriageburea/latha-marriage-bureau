@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class UserProfileModel {
   // Account
   final String uid;
@@ -165,8 +167,8 @@ class UserProfileModel {
       'profileStatus': profileStatus,
       'isApproved': isApproved,
 
-      'createdAt': DateTime.now(),
-      'updatedAt': DateTime.now(),
+      'createdAt': FieldValue.serverTimestamp(),
+      'updatedAt': FieldValue.serverTimestamp(),
     };
   }
 }

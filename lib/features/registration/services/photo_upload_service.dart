@@ -10,6 +10,14 @@ class PhotoUploadService {
     required String uid,
     required Uint8List bytes,
   }) async {
+
+    // ── Size validation (max 5MB) ──────────────────────────────
+    if (bytes.lengthInBytes > 5 * 1024 * 1024) {
+      throw Exception(
+        'Photo size must be less than 5MB. Please choose a smaller image.',
+      );
+    }
+
     final ref = _storage
         .ref()
         .child('profile_photos')

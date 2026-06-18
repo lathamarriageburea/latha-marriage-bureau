@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class ProfessionStep extends StatelessWidget {
   final TextEditingController occupationController;
   final TextEditingController companyController;
   final TextEditingController incomeController;
   final TextEditingController workLocationController;
+  
 
   const ProfessionStep({
     super.key,
@@ -189,6 +191,7 @@ class ProfessionStep extends StatelessWidget {
                       incomeController,
                   keyboardType:
                       TextInputType.number,
+                     inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                   decoration:
                       _fieldDecoration(
                     const Text(

@@ -359,7 +359,6 @@ void showValidationError(String message) {
 
 
   Future<void> submitProfile() async {
-    print("===== SUBMIT STARTED =====");
   try {
     final user =
         FirebaseAuth.instance.currentUser;
@@ -378,12 +377,10 @@ void showValidationError(String message) {
       return;
     }
     
-print("Firebase User: ${FirebaseAuth.instance.currentUser?.uid}");
 
     final registrationService =
         RegistrationService();
 
-    print("Skipping photo upload...");
     
 
 final dobParts =
@@ -396,7 +393,6 @@ final calculatedAge =
     DateTime.now().year - birthYear;
 
 final photoUrl = '';
-print("Photo upload success");
     final profile = UserProfileModel(
   uid: user.uid,
   email: user.email ?? '',
@@ -515,7 +511,6 @@ print("Photo upload success");
   isApproved: false,
 );
 
-print("Saving Firestore profile...");
     await registrationService
         .saveProfile(profile);
 
@@ -543,7 +538,6 @@ print("Saving Firestore profile...");
       e.toString(),
     );
   }
-  print("Firestore save success");
 }
 
  @override
