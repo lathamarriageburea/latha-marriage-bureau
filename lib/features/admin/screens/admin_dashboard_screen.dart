@@ -59,7 +59,7 @@ class AdminDashboardScreen extends StatelessWidget {
 
           final users = snapshot.data!.docs.where((doc) {
             final data = doc.data() as Map<String, dynamic>;
-            return data['email'] != 'admin@gmail.com';
+            return data['email'] != 'lathamarriagebureau@gmail.com';
           }).toList();
 
           final totalProfiles = users.length;

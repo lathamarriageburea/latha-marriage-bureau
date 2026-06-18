@@ -117,7 +117,7 @@ class _MembersScreenState extends State<MembersScreen> {
                       final data = doc.data() as Map<String, dynamic>;
                       final email = (data['email'] ?? '').toString().toLowerCase();
                       final name = (data['fullName'] ?? '').toString().toLowerCase();
-                      return email != 'admin@gmail.com' && name != 'adminaccess';
+                      return email != 'lathamarriagebureau@gmail.com' && name != 'adminaccess';
                     }).toList();
 
                     final users = allUsers.where((doc) {

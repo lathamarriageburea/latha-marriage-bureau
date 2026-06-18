@@ -117,7 +117,7 @@ class DeleteProfilesScreen extends StatelessWidget {
           final users = snapshot.data!.docs.where((doc) {
             final data = doc.data() as Map<String, dynamic>;
             final email = (data['email'] ?? '').toString().toLowerCase();
-            return email != 'admin@gmail.com';
+            return email != 'lathamarriagebureau@gmail.com';
           }).toList();
 
           if (users.isEmpty) {

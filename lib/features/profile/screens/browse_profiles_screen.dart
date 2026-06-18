@@ -244,7 +244,7 @@ class _BrowseProfilesScreenState
                                 .toLowerCase();
 
                         return email !=
-                                'admin@gmail.com' &&
+                                'lathamarriagebureau@gmail.com' &&
                             email !=
                                 currentUser
                                     ?.email &&

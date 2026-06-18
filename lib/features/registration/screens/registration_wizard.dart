@@ -401,7 +401,7 @@ print("Photo upload success");
   uid: user.uid,
   email: user.email ?? '',
 
-  role: user.email == 'admin@gmail.com'
+  role: user.email == 'lathamarriagebureau@gmail.com'
       ? 'admin'
       : 'member',
 
